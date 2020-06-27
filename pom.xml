@@ -28,7 +28,7 @@
     </developers>
 
     <modules>
-        <!-- 服务模块-->
+        <module>missyou-repository-core</module>
     </modules>
 
     <dependencies>
