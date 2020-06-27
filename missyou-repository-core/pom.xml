@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.missyou</groupId>
         <artifactId>missyou-repository</artifactId>
-        <version>1.0.3-SNAPSHOT</version>
+        <version>1.0.7.RELEASE</version>
     </parent>
 
     <artifactId>missyou-repository-core</artifactId>
