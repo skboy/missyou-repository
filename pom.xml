@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>missyou-repository</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.8-SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>持久层</description>
 
@@ -85,6 +85,11 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.missyou</groupId>
+            <artifactId>missyou-commons</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>

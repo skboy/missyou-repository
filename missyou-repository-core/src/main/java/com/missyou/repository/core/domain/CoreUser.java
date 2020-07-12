@@ -1,14 +1,10 @@
 package com.missyou.repository.core.domain;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.missyou.commons.base.BaseDomain;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
-
-import java.io.Serializable;
-import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -22,15 +18,11 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("core_user")
-public class CoreUser implements Serializable {
+public class CoreUser extends BaseDomain {
 
 	private static final long serialVersionUID = -2794647219717011949L;
 
-	/**
-	 * 主键
-	 */
-	@TableId(value = "id", type = IdType.ASSIGN_ID)
-	private Long id;
+
 
 	/**
 	 * 登录名
@@ -72,14 +64,5 @@ public class CoreUser implements Serializable {
 	 */
 	private Integer isDeleted;
 
-	/**
-	 * 创建时间
-	 */
-	private LocalDateTime createTime;
-
-	/**
-	 * 修改时间
-	 */
-	private LocalDateTime updateTime;
 
 }

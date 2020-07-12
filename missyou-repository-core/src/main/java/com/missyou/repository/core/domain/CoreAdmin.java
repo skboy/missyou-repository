@@ -1,8 +1,8 @@
 package com.missyou.repository.core.domain;
 
-import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
+import com.missyou.commons.base.BaseDomain;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -10,7 +10,6 @@ import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -22,16 +21,11 @@ import java.time.LocalDateTime;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class CoreAdmin implements Serializable {
+public class CoreAdmin extends BaseDomain {
 
 	private static final long serialVersionUID = 2103975218208317639L;
 
-	/**
-	 * 主键 <br>
-	 * 生成策略：ASSIGN_ID
-	 */
-	@TableId(value = "id", type = IdType.ASSIGN_ID)
-	private Long id;
+
 
 	/**
 	 * 账号
@@ -67,19 +61,9 @@ public class CoreAdmin implements Serializable {
 	/**
 	 * 逻辑删除：1(已删除) 0(未删除)
 	 */
-	@TableField(value = "is_deleted")
+	@TableField(value = "is_deleted", fill = FieldFill.INSERT)
 	private Boolean deleted;
 
-	/**
-	 * 创建时间
-	 */
-	@TableField(value = "create_time")
-	private LocalDateTime createTime;
 
-	/**
-	 * 修改时间
-	 */
-	@TableField(value = "update_time")
-	private LocalDateTime updateTime;
 
 }
